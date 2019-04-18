@@ -1,0 +1,110 @@
+=== Run information ===
+
+Scheme:       weka.associations.Apriori -N 10 -T 0 -C 0.9 -D 0.05 -U 1.0 -M 0.1 -S -1.0 -c -1
+Relation:     plants
+Instances:    34781
+Attributes:   69
+              ab
+              ak
+              ar
+              az
+              ca
+              co
+              ct
+              de
+              dc
+              fl
+              ga
+              hi
+              id
+              il
+              in
+              ia
+              ks
+              ky
+              la
+              me
+              md
+              ma
+              mi
+              mn
+              ms
+              mo
+              mt
+              ne
+              nv
+              nh
+              nj
+              nm
+              ny
+              nc
+              nd
+              oh
+              ok
+              or
+              pa
+              pr
+              ri
+              sc
+              sd
+              tn
+              tx
+              ut
+              vt
+              va
+              vi
+              wa
+              wv
+              wi
+              wy
+              al
+              bc
+              mb
+              nb
+              lb
+              nf
+              nt
+              ns
+              nu
+              on
+              pe
+              qc
+              sk
+              yt
+              dengl
+              fraspm
+=== Associator model (full training set) ===
+
+
+Apriori
+=======
+
+Minimum support: 0.1 (3478 instances)
+Minimum metric <confidence>: 0.9
+Number of cycles performed: 18
+
+Generated sets of large itemsets:
+
+Size of set of large itemsets L(1): 49
+
+Size of set of large itemsets L(2): 167
+
+Size of set of large itemsets L(3): 116
+
+Size of set of large itemsets L(4): 25
+
+Size of set of large itemsets L(5): 2
+
+Best rules found:
+
+ 1. ct=y ma=y nj=y 3562 ==> ny=y 3524    <conf:(0.99)> lift:(5.96) lev:(0.08) [2932] conv:(76.17)
+ 2. md=y nc=y tn=y 3531 ==> va=y 3489    <conf:(0.99)> lift:(6.1) lev:(0.08) [2916] conv:(68.81)
+ 3. ct=y nj=y pa=y 3585 ==> ny=y 3537    <conf:(0.99)> lift:(5.94) lev:(0.08) [2941] conv:(61.02)
+ 4. ga=y sc=y va=y al=y 3579 ==> nc=y 3529    <conf:(0.99)> lift:(5.79) lev:(0.08) [2919] conv:(58.22)
+ 5. ga=y sc=y va=y 3882 ==> nc=y 3825    <conf:(0.99)> lift:(5.78) lev:(0.09) [3163] conv:(55.53)
+ 6. ct=y ma=y pa=y 3713 ==> ny=y 3658    <conf:(0.99)> lift:(5.94) lev:(0.09) [3041] conv:(55.3)
+ 7. ms=y nc=y sc=y al=y 3572 ==> ga=y 3519    <conf:(0.99)> lift:(5.77) lev:(0.08) [2908] conv:(54.85)
+ 8. ma=y nj=y pa=y 3658 ==> ny=y 3597    <conf:(0.98)> lift:(5.92) lev:(0.09) [2989] conv:(49.21)
+ 9. nj=y ny=y oh=y 3556 ==> pa=y 3491    <conf:(0.98)> lift:(6.24) lev:(0.08) [2931] conv:(45.4)
+10. ga=y md=y nc=y 3551 ==> va=y 3484    <conf:(0.98)> lift:(6.05) lev:(0.08) [2908] conv:(43.76)
+

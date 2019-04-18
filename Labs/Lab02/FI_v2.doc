@@ -1,0 +1,479 @@
+=== Run information ===
+
+Scheme:       weka.associations.Apriori -I -N 10 -T 0 -C 0.9 -D 0.05 -U 1.0 -M 0.1 -S -1.0 -c -1
+Relation:     plants
+Instances:    34781
+Attributes:   69
+              ab
+              ak
+              ar
+              az
+              ca
+              co
+              ct
+              de
+              dc
+              fl
+              ga
+              hi
+              id
+              il
+              in
+              ia
+              ks
+              ky
+              la
+              me
+              md
+              ma
+              mi
+              mn
+              ms
+              mo
+              mt
+              ne
+              nv
+              nh
+              nj
+              nm
+              ny
+              nc
+              nd
+              oh
+              ok
+              or
+              pa
+              pr
+              ri
+              sc
+              sd
+              tn
+              tx
+              ut
+              vt
+              va
+              vi
+              wa
+              wv
+              wi
+              wy
+              al
+              bc
+              mb
+              nb
+              lb
+              nf
+              nt
+              ns
+              nu
+              on
+              pe
+              qc
+              sk
+              yt
+              dengl
+              fraspm
+=== Associator model (full training set) ===
+
+
+Apriori
+=======
+
+Minimum support: 0.1 (3478 instances)
+Minimum metric <confidence>: 0.9
+Number of cycles performed: 18
+
+Generated sets of large itemsets:
+
+Size of set of large itemsets L(1): 49
+
+Large Itemsets L(1):
+ar=y 4610
+az=y 6778
+ca=y 11676
+co=y 5465
+ct=y 4391
+de=y 3630
+fl=y 6621
+ga=y 5942
+hi=y 3804
+id=y 5129
+il=y 5167
+in=y 4440
+ia=y 3652
+ks=y 3869
+ky=y 4555
+la=y 5154
+me=y 3969
+md=y 5108
+ma=y 4963
+mi=y 4734
+mn=y 3929
+ms=y 4815
+mo=y 4638
+mt=y 4800
+nv=y 5670
+nh=y 3635
+nj=y 4822
+nm=y 6403
+ny=y 5773
+nc=y 5926
+oh=y 4772
+ok=y 4651
+or=y 7028
+pa=y 5474
+pr=y 4781
+sc=y 5432
+tn=y 4900
+tx=y 8483
+ut=y 6041
+vt=y 3713
+va=y 5638
+wa=y 5654
+wv=y 4062
+wi=y 4321
+wy=y 4710
+al=y 5702
+bc=y 4875
+on=y 5068
+qc=y 4272
+
+Size of set of large itemsets L(2): 167
+
+Large Itemsets L(2):
+ar=y ga=y 3566
+ar=y la=y 3575
+ar=y mo=y 3664
+ar=y nc=y 3480
+ar=y ok=y 3561
+ar=y tn=y 3565
+ar=y tx=y 3668
+ar=y al=y 3620
+az=y ca=y 3868
+az=y nm=y 4723
+az=y ut=y 3858
+ca=y id=y 3564
+ca=y nv=y 4701
+ca=y or=y 5522
+ca=y ut=y 3852
+ca=y wa=y 4086
+co=y nm=y 3932
+co=y ut=y 4005
+co=y wy=y 3841
+ct=y md=y 3521
+ct=y ma=y 3999
+ct=y mi=y 3498
+ct=y nj=y 3747
+ct=y ny=y 4132
+ct=y oh=y 3549
+ct=y pa=y 3940
+ct=y va=y 3526
+fl=y ga=y 4252
+fl=y la=y 3845
+fl=y ms=y 3769
+fl=y nc=y 3696
+fl=y sc=y 3911
+fl=y tx=y 3650
+fl=y al=y 4161
+ga=y ky=y 3560
+ga=y la=y 3989
+ga=y md=y 3663
+ga=y ms=y 4219
+ga=y nc=y 4833
+ga=y sc=y 4821
+ga=y tn=y 3979
+ga=y tx=y 3612
+ga=y va=y 4251
+ga=y al=y 4931
+id=y mt=y 3906
+id=y or=y 4199
+id=y wa=y 3969
+il=y in=y 4134
+il=y ky=y 3765
+il=y md=y 3737
+il=y ma=y 3556
+il=y mi=y 3789
+il=y mo=y 3979
+il=y nj=y 3651
+il=y ny=y 3985
+il=y nc=y 3612
+il=y oh=y 4085
+il=y pa=y 4050
+il=y tn=y 3695
+il=y va=y 3903
+il=y wi=y 3644
+il=y on=y 3581
+in=y ky=y 3561
+in=y md=y 3535
+in=y mi=y 3554
+in=y mo=y 3489
+in=y ny=y 3677
+in=y oh=y 3905
+in=y pa=y 3781
+in=y va=y 3653
+ky=y md=y 3628
+ky=y mo=y 3553
+ky=y nc=y 3768
+ky=y oh=y 3647
+ky=y pa=y 3655
+ky=y tn=y 3986
+ky=y va=y 3938
+ky=y al=y 3489
+la=y ms=y 4077
+la=y nc=y 3701
+la=y sc=y 3784
+la=y tx=y 4204
+la=y al=y 4091
+me=y ny=y 3613
+md=y ma=y 3642
+md=y nj=y 4005
+md=y ny=y 4055
+md=y nc=y 4162
+md=y oh=y 3764
+md=y pa=y 4219
+md=y sc=y 3537
+md=y tn=y 3747
+md=y va=y 4455
+md=y wv=y 3614
+md=y al=y 3491
+ma=y mi=y 3636
+ma=y nj=y 3858
+ma=y ny=y 4372
+ma=y oh=y 3654
+ma=y pa=y 4135
+ma=y va=y 3652
+ma=y on=y 3653
+mi=y ny=y 4085
+mi=y oh=y 3758
+mi=y pa=y 3869
+mi=y wi=y 3816
+mi=y on=y 4007
+ms=y nc=y 3912
+ms=y sc=y 3959
+ms=y tx=y 3660
+ms=y va=y 3566
+ms=y al=y 4343
+mo=y tn=y 3529
+mo=y va=y 3511
+mt=y or=y 3495
+mt=y wa=y 3535
+mt=y wy=y 3819
+nv=y or=y 3500
+nv=y ut=y 4019
+nj=y ny=y 4254
+nj=y nc=y 3763
+nj=y oh=y 3711
+nj=y pa=y 4249
+nj=y va=y 4036
+nm=y tx=y 3924
+nm=y ut=y 3596
+ny=y nc=y 3758
+ny=y oh=y 4100
+ny=y pa=y 4652
+ny=y vt=y 3510
+ny=y va=y 4089
+ny=y wv=y 3483
+ny=y wi=y 3709
+ny=y on=y 4094
+nc=y oh=y 3550
+nc=y pa=y 3949
+nc=y sc=y 4800
+nc=y tn=y 4207
+nc=y va=y 4854
+nc=y wv=y 3485
+nc=y al=y 4475
+oh=y pa=y 4206
+oh=y tn=y 3563
+oh=y va=y 3883
+oh=y wv=y 3557
+oh=y on=y 3565
+ok=y tx=y 4104
+or=y wa=y 4959
+or=y bc=y 3679
+pa=y tn=y 3670
+pa=y va=y 4281
+pa=y wv=y 3707
+pa=y wi=y 3518
+pa=y on=y 3759
+sc=y tn=y 3695
+sc=y tx=y 3479
+sc=y va=y 4169
+sc=y al=y 4498
+tn=y va=y 4228
+tn=y al=y 3880
+tx=y al=y 3746
+ut=y wy=y 3495
+va=y wv=y 3760
+va=y al=y 4047
+wa=y bc=y 3908
+wi=y on=y 3667
+on=y qc=y 3816
+
+Size of set of large itemsets L(3): 116
+
+Large Itemsets L(3):
+ca=y or=y wa=y 3963
+ct=y ma=y nj=y 3562
+ct=y ma=y ny=y 3879
+ct=y ma=y pa=y 3713
+ct=y nj=y ny=y 3672
+ct=y nj=y pa=y 3585
+ct=y ny=y pa=y 3841
+fl=y ga=y ms=y 3538
+fl=y ga=y nc=y 3512
+fl=y ga=y sc=y 3726
+fl=y ga=y al=y 3852
+fl=y la=y al=y 3491
+fl=y ms=y al=y 3599
+fl=y nc=y sc=y 3522
+fl=y sc=y al=y 3638
+ga=y la=y ms=y 3668
+ga=y la=y nc=y 3485
+ga=y la=y sc=y 3596
+ga=y la=y al=y 3763
+ga=y md=y nc=y 3551
+ga=y md=y va=y 3556
+ga=y ms=y nc=y 3750
+ga=y ms=y sc=y 3827
+ga=y ms=y al=y 4049
+ga=y nc=y sc=y 4447
+ga=y nc=y tn=y 3724
+ga=y nc=y va=y 4124
+ga=y nc=y al=y 4246
+ga=y sc=y tn=y 3517
+ga=y sc=y va=y 3882
+ga=y sc=y al=y 4322
+ga=y tn=y va=y 3648
+ga=y tn=y al=y 3603
+ga=y va=y al=y 3788
+id=y or=y wa=y 3693
+il=y in=y ny=y 3489
+il=y in=y oh=y 3724
+il=y in=y pa=y 3582
+il=y md=y pa=y 3491
+il=y md=y va=y 3505
+il=y nj=y pa=y 3499
+il=y ny=y oh=y 3624
+il=y ny=y pa=y 3714
+il=y oh=y pa=y 3722
+il=y oh=y va=y 3502
+il=y pa=y va=y 3535
+in=y ny=y oh=y 3478
+in=y ny=y pa=y 3505
+in=y oh=y pa=y 3594
+ky=y md=y va=y 3513
+ky=y nc=y tn=y 3555
+ky=y nc=y va=y 3614
+ky=y tn=y va=y 3647
+la=y ms=y sc=y 3503
+la=y ms=y tx=y 3487
+la=y ms=y al=y 3767
+la=y nc=y sc=y 3483
+la=y sc=y al=y 3561
+md=y ma=y ny=y 3534
+md=y nj=y ny=y 3687
+md=y nj=y nc=y 3528
+md=y nj=y pa=y 3730
+md=y nj=y va=y 3764
+md=y ny=y pa=y 3825
+md=y ny=y va=y 3710
+md=y nc=y pa=y 3613
+md=y nc=y tn=y 3531
+md=y nc=y va=y 4026
+md=y oh=y pa=y 3622
+md=y oh=y va=y 3538
+md=y pa=y va=y 3892
+md=y tn=y va=y 3657
+md=y va=y wv=y 3485
+ma=y mi=y ny=y 3540
+ma=y nj=y ny=y 3760
+ma=y nj=y pa=y 3658
+ma=y ny=y oh=y 3553
+ma=y ny=y pa=y 3970
+ma=y ny=y va=y 3521
+ma=y ny=y on=y 3537
+ma=y oh=y pa=y 3525
+mi=y ny=y oh=y 3538
+mi=y ny=y pa=y 3707
+mi=y ny=y wi=y 3488
+mi=y ny=y on=y 3663
+mi=y oh=y pa=y 3520
+mi=y wi=y on=y 3492
+ms=y nc=y sc=y 3698
+ms=y nc=y al=y 3733
+ms=y sc=y al=y 3805
+nj=y ny=y oh=y 3556
+nj=y ny=y pa=y 3985
+nj=y ny=y va=y 3671
+nj=y nc=y va=y 3612
+nj=y oh=y pa=y 3615
+nj=y pa=y va=y 3717
+ny=y nc=y pa=y 3515
+ny=y nc=y va=y 3577
+ny=y oh=y pa=y 3887
+ny=y oh=y va=y 3501
+ny=y pa=y va=y 3831
+ny=y pa=y on=y 3628
+nc=y pa=y va=y 3751
+nc=y sc=y tn=y 3580
+nc=y sc=y va=y 4068
+nc=y sc=y al=y 4148
+nc=y tn=y va=y 3964
+nc=y tn=y al=y 3524
+nc=y va=y al=y 3864
+oh=y pa=y va=y 3671
+or=y wa=y bc=y 3560
+pa=y tn=y va=y 3516
+pa=y va=y wv=y 3494
+sc=y tn=y va=y 3480
+sc=y va=y al=y 3682
+tn=y va=y al=y 3502
+
+Size of set of large itemsets L(4): 25
+
+Large Itemsets L(4):
+ct=y ma=y nj=y ny=y 3524
+ct=y ma=y ny=y pa=y 3658
+ct=y nj=y ny=y pa=y 3537
+fl=y ga=y sc=y al=y 3532
+ga=y la=y ms=y al=y 3549
+ga=y md=y nc=y va=y 3484
+ga=y ms=y nc=y sc=y 3612
+ga=y ms=y nc=y al=y 3635
+ga=y ms=y sc=y al=y 3719
+ga=y nc=y sc=y va=y 3825
+ga=y nc=y sc=y al=y 4038
+ga=y nc=y tn=y va=y 3559
+ga=y nc=y va=y al=y 3694
+ga=y sc=y va=y al=y 3579
+il=y ny=y oh=y pa=y 3483
+md=y nj=y ny=y pa=y 3550
+md=y nj=y pa=y va=y 3528
+md=y ny=y pa=y va=y 3555
+md=y nc=y pa=y va=y 3532
+md=y nc=y tn=y va=y 3489
+ma=y nj=y ny=y pa=y 3597
+ms=y nc=y sc=y al=y 3572
+nj=y ny=y oh=y pa=y 3491
+nj=y ny=y pa=y va=y 3519
+nc=y sc=y va=y al=y 3608
+
+Size of set of large itemsets L(5): 2
+
+Large Itemsets L(5):
+ga=y ms=y nc=y sc=y al=y 3519
+ga=y nc=y sc=y va=y al=y 3529
+
+Best rules found:
+
+ 1. ct=y ma=y nj=y 3562 ==> ny=y 3524    <conf:(0.99)> lift:(5.96) lev:(0.08) [2932] conv:(76.17)
+ 2. md=y nc=y tn=y 3531 ==> va=y 3489    <conf:(0.99)> lift:(6.1) lev:(0.08) [2916] conv:(68.81)
+ 3. ct=y nj=y pa=y 3585 ==> ny=y 3537    <conf:(0.99)> lift:(5.94) lev:(0.08) [2941] conv:(61.02)
+ 4. ga=y sc=y va=y al=y 3579 ==> nc=y 3529    <conf:(0.99)> lift:(5.79) lev:(0.08) [2919] conv:(58.22)
+ 5. ga=y sc=y va=y 3882 ==> nc=y 3825    <conf:(0.99)> lift:(5.78) lev:(0.09) [3163] conv:(55.53)
+ 6. ct=y ma=y pa=y 3713 ==> ny=y 3658    <conf:(0.99)> lift:(5.94) lev:(0.09) [3041] conv:(55.3)
+ 7. ms=y nc=y sc=y al=y 3572 ==> ga=y 3519    <conf:(0.99)> lift:(5.77) lev:(0.08) [2908] conv:(54.85)
+ 8. ma=y nj=y pa=y 3658 ==> ny=y 3597    <conf:(0.98)> lift:(5.92) lev:(0.09) [2989] conv:(49.21)
+ 9. nj=y ny=y oh=y 3556 ==> pa=y 3491    <conf:(0.98)> lift:(6.24) lev:(0.08) [2931] conv:(45.4)
+10. ga=y md=y nc=y 3551 ==> va=y 3484    <conf:(0.98)> lift:(6.05) lev:(0.08) [2908] conv:(43.76)
+

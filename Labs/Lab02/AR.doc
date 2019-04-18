@@ -1,0 +1,180 @@
+=== Run information ===
+
+Scheme:       weka.associations.FPGrowth -P 2 -I -1 -N 0 -T 0 -C 0.95 -D 0.05 -U 1.0 -M 0.1 -S
+Relation:     plants
+Instances:    34781
+Attributes:   69
+              ab
+              ak
+              ar
+              az
+              ca
+              co
+              ct
+              de
+              dc
+              fl
+              ga
+              hi
+              id
+              il
+              in
+              ia
+              ks
+              ky
+              la
+              me
+              md
+              ma
+              mi
+              mn
+              ms
+              mo
+              mt
+              ne
+              nv
+              nh
+              nj
+              nm
+              ny
+              nc
+              nd
+              oh
+              ok
+              or
+              pa
+              pr
+              ri
+              sc
+              sd
+              tn
+              tx
+              ut
+              vt
+              va
+              vi
+              wa
+              wv
+              wi
+              wy
+              al
+              bc
+              mb
+              nb
+              lb
+              nf
+              nt
+              ns
+              nu
+              on
+              pe
+              qc
+              sk
+              yt
+              dengl
+              fraspm
+=== Associator model (full training set) ===
+
+FPGrowth found 100 rules
+
+1. [ma=y, nj=y, ct=y]: 3562 ==> [ny=y]: 3524   <conf:(0.99)> lift:(5.96) lev:(0.08) conv:(76.17) 
+2. [nc=y, md=y, tn=y]: 3531 ==> [va=y]: 3489   <conf:(0.99)> lift:(6.1) lev:(0.08) conv:(68.81) 
+3. [pa=y, nj=y, ct=y]: 3585 ==> [ny=y]: 3537   <conf:(0.99)> lift:(5.94) lev:(0.08) conv:(61.02) 
+4. [ga=y, al=y, va=y, sc=y]: 3579 ==> [nc=y]: 3529   <conf:(0.99)> lift:(5.79) lev:(0.08) conv:(58.22) 
+5. [ga=y, va=y, sc=y]: 3882 ==> [nc=y]: 3825   <conf:(0.99)> lift:(5.78) lev:(0.09) conv:(55.53) 
+6. [pa=y, ma=y, ct=y]: 3713 ==> [ny=y]: 3658   <conf:(0.99)> lift:(5.94) lev:(0.09) conv:(55.3) 
+7. [nc=y, al=y, sc=y, ms=y]: 3572 ==> [ga=y]: 3519   <conf:(0.99)> lift:(5.77) lev:(0.08) conv:(54.85) 
+8. [pa=y, ma=y, nj=y]: 3658 ==> [ny=y]: 3597   <conf:(0.98)> lift:(5.92) lev:(0.09) conv:(49.21) 
+9. [ny=y, nj=y, oh=y]: 3556 ==> [pa=y]: 3491   <conf:(0.98)> lift:(6.24) lev:(0.08) conv:(45.4) 
+10. [ga=y, nc=y, md=y]: 3551 ==> [va=y]: 3484   <conf:(0.98)> lift:(6.05) lev:(0.08) conv:(43.76) 
+11. [nj=y, ct=y]: 3747 ==> [ny=y]: 3672   <conf:(0.98)> lift:(5.9) lev:(0.09) conv:(41.12) 
+12. [al=y, va=y, sc=y]: 3682 ==> [nc=y]: 3608   <conf:(0.98)> lift:(5.75) lev:(0.09) conv:(40.73) 
+13. [ga=y, va=y, md=y]: 3556 ==> [nc=y]: 3484   <conf:(0.98)> lift:(5.75) lev:(0.08) conv:(40.41) 
+14. [nc=y, al=y, va=y, sc=y]: 3608 ==> [ga=y]: 3529   <conf:(0.98)> lift:(5.73) lev:(0.08) conv:(37.4) 
+15. [nc=y, pa=y, md=y]: 3613 ==> [va=y]: 3532   <conf:(0.98)> lift:(6.03) lev:(0.08) conv:(36.92) 
+16. [al=y, sc=y, ms=y]: 3805 ==> [ga=y]: 3719   <conf:(0.98)> lift:(5.72) lev:(0.09) conv:(36.26) 
+17. [nc=y, sc=y, ms=y]: 3698 ==> [ga=y]: 3612   <conf:(0.98)> lift:(5.72) lev:(0.09) conv:(35.24) 
+18. [md=y, tn=y]: 3747 ==> [va=y]: 3657   <conf:(0.98)> lift:(6.02) lev:(0.09) conv:(34.5) 
+19. [va=y, sc=y]: 4169 ==> [nc=y]: 4068   <conf:(0.98)> lift:(5.73) lev:(0.1) conv:(33.91) 
+20. [ga=y, va=y, tn=y]: 3648 ==> [nc=y]: 3559   <conf:(0.98)> lift:(5.73) lev:(0.08) conv:(33.63) 
+21. [ga=y, al=y, va=y]: 3788 ==> [nc=y]: 3694   <conf:(0.98)> lift:(5.72) lev:(0.09) conv:(33.08) 
+22. [pa=y, ct=y]: 3940 ==> [ny=y]: 3841   <conf:(0.97)> lift:(5.87) lev:(0.09) conv:(32.86) 
+23. [ma=y, nj=y]: 3858 ==> [ny=y]: 3760   <conf:(0.97)> lift:(5.87) lev:(0.09) conv:(32.5) 
+24. [ga=y, nc=y, sc=y, ms=y]: 3612 ==> [al=y]: 3519   <conf:(0.97)> lift:(5.94) lev:(0.08) conv:(32.13) 
+25. [nj=y, oh=y]: 3711 ==> [pa=y]: 3615   <conf:(0.97)> lift:(6.19) lev:(0.09) conv:(32.24) 
+26. [nc=y, al=y, ms=y]: 3733 ==> [ga=y]: 3635   <conf:(0.97)> lift:(5.7) lev:(0.09) conv:(31.27) 
+27. [ma=y, mi=y]: 3636 ==> [ny=y]: 3540   <conf:(0.97)> lift:(5.87) lev:(0.08) conv:(31.26) 
+28. [nc=y, al=y, sc=y]: 4148 ==> [ga=y]: 4038   <conf:(0.97)> lift:(5.7) lev:(0.1) conv:(30.99) 
+29. [ma=y, oh=y]: 3654 ==> [ny=y]: 3553   <conf:(0.97)> lift:(5.86) lev:(0.08) conv:(29.88) 
+30. [al=y, va=y, sc=y]: 3682 ==> [ga=y]: 3579   <conf:(0.97)> lift:(5.69) lev:(0.08) conv:(29.36) 
+31. [ga=y, sc=y, ms=y]: 3827 ==> [al=y]: 3719   <conf:(0.97)> lift:(5.93) lev:(0.09) conv:(29.35) 
+32. [fl=y, al=y, sc=y]: 3638 ==> [ga=y]: 3532   <conf:(0.97)> lift:(5.68) lev:(0.08) conv:(28.19) 
+33. [ga=y, md=y]: 3663 ==> [va=y]: 3556   <conf:(0.97)> lift:(5.99) lev:(0.09) conv:(28.42) 
+34. [md=y, ma=y]: 3642 ==> [ny=y]: 3534   <conf:(0.97)> lift:(5.85) lev:(0.08) conv:(27.87) 
+35. [ga=y, va=y]: 4251 ==> [nc=y]: 4124   <conf:(0.97)> lift:(5.69) lev:(0.1) conv:(27.55) 
+36. [ma=y, ct=y]: 3999 ==> [ny=y]: 3879   <conf:(0.97)> lift:(5.84) lev:(0.09) conv:(27.56) 
+37. [ca=y, wa=y]: 4086 ==> [or=y]: 3963   <conf:(0.97)> lift:(4.8) lev:(0.09) conv:(26.29) 
+38. [ga=y, md=y]: 3663 ==> [nc=y]: 3551   <conf:(0.97)> lift:(5.69) lev:(0.08) conv:(26.89) 
+39. [ga=y, nc=y, ms=y]: 3750 ==> [al=y]: 3635   <conf:(0.97)> lift:(5.91) lev:(0.09) conv:(27.03) 
+40. [sc=y, tn=y]: 3695 ==> [nc=y]: 3580   <conf:(0.97)> lift:(5.69) lev:(0.08) conv:(26.43) 
+41. [md=y, ky=y]: 3628 ==> [va=y]: 3513   <conf:(0.97)> lift:(5.97) lev:(0.08) conv:(26.21) 
+42. [on=y, ma=y]: 3653 ==> [ny=y]: 3537   <conf:(0.97)> lift:(5.83) lev:(0.08) conv:(26.04) 
+43. [ga=y, nc=y, al=y, ms=y]: 3635 ==> [sc=y]: 3519   <conf:(0.97)> lift:(6.2) lev:(0.08) conv:(26.22) 
+44. [or=y, bc=y]: 3679 ==> [wa=y]: 3560   <conf:(0.97)> lift:(5.95) lev:(0.09) conv:(25.67) 
+45. [ga=y, la=y, ms=y]: 3668 ==> [al=y]: 3549   <conf:(0.97)> lift:(5.9) lev:(0.08) conv:(25.56) 
+46. [nc=y, md=y]: 4162 ==> [va=y]: 4026   <conf:(0.97)> lift:(5.97) lev:(0.1) conv:(25.46) 
+47. [sc=y, ms=y]: 3959 ==> [ga=y]: 3827   <conf:(0.97)> lift:(5.66) lev:(0.09) conv:(24.68) 
+48. [nc=y, sc=y, ms=y]: 3698 ==> [al=y]: 3572   <conf:(0.97)> lift:(5.89) lev:(0.09) conv:(24.34) 
+49. [pa=y, nj=y, oh=y]: 3615 ==> [ny=y]: 3491   <conf:(0.97)> lift:(5.82) lev:(0.08) conv:(24.12) 
+50. [pa=y, on=y]: 3759 ==> [ny=y]: 3628   <conf:(0.97)> lift:(5.81) lev:(0.09) conv:(23.75) 
+51. [ma=y, oh=y]: 3654 ==> [pa=y]: 3525   <conf:(0.96)> lift:(6.13) lev:(0.08) conv:(23.68) 
+52. [md=y, wv=y]: 3614 ==> [va=y]: 3485   <conf:(0.96)> lift:(5.95) lev:(0.08) conv:(23.29) 
+53. [va=y, ma=y]: 3652 ==> [ny=y]: 3521   <conf:(0.96)> lift:(5.81) lev:(0.08) conv:(23.07) 
+54. [ny=y, nj=y, ct=y]: 3672 ==> [pa=y]: 3537   <conf:(0.96)> lift:(6.12) lev:(0.09) conv:(22.75) 
+55. [ga=y, nc=y, ms=y]: 3750 ==> [sc=y]: 3612   <conf:(0.96)> lift:(6.17) lev:(0.09) conv:(22.77) 
+56. [ny=y, md=y, nj=y]: 3687 ==> [pa=y]: 3550   <conf:(0.96)> lift:(6.12) lev:(0.09) conv:(22.51) 
+57. [md=y, oh=y]: 3764 ==> [pa=y]: 3622   <conf:(0.96)> lift:(6.11) lev:(0.09) conv:(22.18) 
+58. [sc=y, ms=y]: 3959 ==> [al=y]: 3805   <conf:(0.96)> lift:(5.86) lev:(0.09) conv:(21.35) 
+59. [ny=y, il=y, oh=y]: 3624 ==> [pa=y]: 3483   <conf:(0.96)> lift:(6.11) lev:(0.08) conv:(21.5) 
+60. [al=y, sc=y]: 4498 ==> [ga=y]: 4322   <conf:(0.96)> lift:(5.62) lev:(0.1) conv:(21.07) 
+61. [pa=y, ma=y]: 4135 ==> [ny=y]: 3970   <conf:(0.96)> lift:(5.78) lev:(0.09) conv:(20.78) 
+62. [nc=y, nj=y]: 3763 ==> [va=y]: 3612   <conf:(0.96)> lift:(5.92) lev:(0.09) conv:(20.74) 
+63. [ga=y, ms=y]: 4219 ==> [al=y]: 4049   <conf:(0.96)> lift:(5.85) lev:(0.1) conv:(20.63) 
+64. [ny=y, nj=y, ct=y]: 3672 ==> [ma=y]: 3524   <conf:(0.96)> lift:(6.73) lev:(0.09) conv:(21.13) 
+65. [nc=y, ky=y]: 3768 ==> [va=y]: 3614   <conf:(0.96)> lift:(5.92) lev:(0.09) conv:(20.37) 
+66. [ny=y, va=y, nj=y]: 3671 ==> [pa=y]: 3519   <conf:(0.96)> lift:(6.09) lev:(0.08) conv:(20.22) 
+67. [nc=y, ms=y]: 3912 ==> [ga=y]: 3750   <conf:(0.96)> lift:(5.61) lev:(0.09) conv:(19.9) 
+68. [al=y, va=y, sc=y]: 3682 ==> [ga=y, nc=y]: 3529   <conf:(0.96)> lift:(6.9) lev:(0.09) conv:(20.59) 
+69. [il=y, nj=y]: 3651 ==> [pa=y]: 3499   <conf:(0.96)> lift:(6.09) lev:(0.08) conv:(20.11) 
+70. [nj=y, oh=y]: 3711 ==> [ny=y]: 3556   <conf:(0.96)> lift:(5.77) lev:(0.08) conv:(19.84) 
+71. [ny=y, va=y, md=y]: 3710 ==> [pa=y]: 3555   <conf:(0.96)> lift:(6.09) lev:(0.09) conv:(20.04) 
+72. [pa=y, mi=y]: 3869 ==> [ny=y]: 3707   <conf:(0.96)> lift:(5.77) lev:(0.09) conv:(19.8) 
+73. [pa=y, tn=y]: 3670 ==> [va=y]: 3516   <conf:(0.96)> lift:(5.91) lev:(0.08) conv:(19.84) 
+74. [nc=y, al=y, ms=y]: 3733 ==> [sc=y]: 3572   <conf:(0.96)> lift:(6.13) lev:(0.09) conv:(19.44) 
+75. [nj=y, ct=y]: 3747 ==> [pa=y]: 3585   <conf:(0.96)> lift:(6.08) lev:(0.09) conv:(19.37) 
+76. [ny=y, ma=y, nj=y]: 3760 ==> [pa=y]: 3597   <conf:(0.96)> lift:(6.08) lev:(0.09) conv:(19.32) 
+77. [nc=y, al=y, va=y]: 3864 ==> [ga=y]: 3694   <conf:(0.96)> lift:(5.6) lev:(0.09) conv:(18.74) 
+78. [ga=y, nc=y, tn=y]: 3724 ==> [va=y]: 3559   <conf:(0.96)> lift:(5.9) lev:(0.08) conv:(18.8) 
+79. [ga=y, nc=y, al=y, va=y]: 3694 ==> [sc=y]: 3529   <conf:(0.96)> lift:(6.12) lev:(0.08) conv:(18.78) 
+80. [fl=y, ms=y]: 3769 ==> [al=y]: 3599   <conf:(0.95)> lift:(5.82) lev:(0.09) conv:(18.43) 
+81. [al=y, va=y]: 4047 ==> [nc=y]: 3864   <conf:(0.95)> lift:(5.6) lev:(0.09) conv:(18.25) 
+82. [nc=y, ms=y]: 3912 ==> [al=y]: 3733   <conf:(0.95)> lift:(5.82) lev:(0.09) conv:(18.17) 
+83. [va=y, md=y, tn=y]: 3657 ==> [nc=y]: 3489   <conf:(0.95)> lift:(5.6) lev:(0.08) conv:(17.95) 
+84. [oh=y, in=y]: 3905 ==> [il=y]: 3724   <conf:(0.95)> lift:(6.42) lev:(0.09) conv:(18.27) 
+85. [ny=y, in=y]: 3677 ==> [pa=y]: 3505   <conf:(0.95)> lift:(6.06) lev:(0.08) conv:(17.91) 
+86. [fl=y, nc=y]: 3696 ==> [sc=y]: 3522   <conf:(0.95)> lift:(6.1) lev:(0.08) conv:(17.82) 
+87. [tx=y, ms=y]: 3660 ==> [la=y]: 3487   <conf:(0.95)> lift:(6.43) lev:(0.08) conv:(17.92) 
+88. [fl=y, sc=y]: 3911 ==> [ga=y]: 3726   <conf:(0.95)> lift:(5.58) lev:(0.09) conv:(17.43) 
+89. [ny=y, pa=y, ct=y]: 3841 ==> [ma=y]: 3658   <conf:(0.95)> lift:(6.67) lev:(0.09) conv:(17.9) 
+90. [on=y, wi=y]: 3667 ==> [mi=y]: 3492   <conf:(0.95)> lift:(7) lev:(0.09) conv:(18) 
+91. [nc=y, ny=y]: 3758 ==> [va=y]: 3577   <conf:(0.95)> lift:(5.87) lev:(0.09) conv:(17.3) 
+92. [sc=y, tn=y]: 3695 ==> [ga=y]: 3517   <conf:(0.95)> lift:(5.57) lev:(0.08) conv:(17.12) 
+93. [pa=y, md=y, nj=y]: 3730 ==> [ny=y]: 3550   <conf:(0.95)> lift:(5.73) lev:(0.08) conv:(17.19) 
+94. [nc=y, sc=y, ms=y]: 3698 ==> [ga=y, al=y]: 3519   <conf:(0.95)> lift:(6.71) lev:(0.09) conv:(17.63) 
+95. [ga=y, md=y]: 3663 ==> [nc=y, va=y]: 3484   <conf:(0.95)> lift:(6.82) lev:(0.09) conv:(17.51) 
+96. [ga=y, nc=y, al=y]: 4246 ==> [sc=y]: 4038   <conf:(0.95)> lift:(6.09) lev:(0.1) conv:(17.14) 
+97. [nj=y, ct=y]: 3747 ==> [ma=y]: 3562   <conf:(0.95)> lift:(6.66) lev:(0.09) conv:(17.27) 
+98. [pa=y, in=y]: 3781 ==> [oh=y]: 3594   <conf:(0.95)> lift:(6.93) lev:(0.09) conv:(17.35) 
+99. [sc=y, la=y]: 3784 ==> [ga=y]: 3596   <conf:(0.95)> lift:(5.56) lev:(0.08) conv:(16.6) 
+100. [fl=y, nc=y]: 3696 ==> [ga=y]: 3512   <conf:(0.95)> lift:(5.56) lev:(0.08) conv:(16.57) 
+

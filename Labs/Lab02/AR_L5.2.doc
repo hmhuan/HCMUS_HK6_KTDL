@@ -1,0 +1,86 @@
+=== Run information ===
+
+Scheme:       weka.associations.FPGrowth -P 2 -I -1 -N 0 -T 0 -C 0.95 -D 0.05 -U 1.0 -M 0.1 -S -rules "ga, va, nc, sc, al"
+Relation:     plants
+Instances:    34781
+Attributes:   69
+              ab
+              ak
+              ar
+              az
+              ca
+              co
+              ct
+              de
+              dc
+              fl
+              ga
+              hi
+              id
+              il
+              in
+              ia
+              ks
+              ky
+              la
+              me
+              md
+              ma
+              mi
+              mn
+              ms
+              mo
+              mt
+              ne
+              nv
+              nh
+              nj
+              nm
+              ny
+              nc
+              nd
+              oh
+              ok
+              or
+              pa
+              pr
+              ri
+              sc
+              sd
+              tn
+              tx
+              ut
+              vt
+              va
+              vi
+              wa
+              wv
+              wi
+              wy
+              al
+              bc
+              mb
+              nb
+              lb
+              nf
+              nt
+              ns
+              nu
+              on
+              pe
+              qc
+              sk
+              yt
+              dengl
+              fraspm
+=== Associator model (full training set) ===
+
+FPGrowth found 4 rules
+
+Showing only rules that contain: ga, va, nc, sc, al
+
+1. [ga=y, al=y, va=y, sc=y]: 3579 ==> [nc=y]: 3529   <conf:(0.99)> lift:(5.79) lev:(0.08) conv:(58.22) 
+2. [nc=y, al=y, va=y, sc=y]: 3608 ==> [ga=y]: 3529   <conf:(0.98)> lift:(5.73) lev:(0.08) conv:(37.4) 
+3. [al=y, va=y, sc=y]: 3682 ==> [ga=y, nc=y]: 3529   <conf:(0.96)> lift:(6.9) lev:(0.09) conv:(20.59) 
+4. [ga=y, nc=y, al=y, va=y]: 3694 ==> [sc=y]: 3529   <conf:(0.96)> lift:(6.12) lev:(0.08) conv:(18.78) 
+

@@ -9,7 +9,7 @@ import sys
 state_file = "stateabbr_filter.txt"
 plants_data = "plants.data"
 plants_binary = "plants.csv"
-
+plants_withQ = "plants_withQ.csv"
 # function to load states in file "stateabbr_filter.txt"
 def loadStates():
 	states = []
@@ -23,7 +23,7 @@ def loadStates():
 def convertToBinary():
     states = loadStates()
     fIn = open(plants_data, "r")
-    fOut = open(plants_binary, "w")
+    fOut = open(plants_withQ, "w")
 
     header = "name of plant"
     for state in states:
@@ -36,7 +36,7 @@ def convertToBinary():
             if state in plantInfo:
                 newLine += ",y"
             else:
-                newLine += ",n"
+                newLine += ",?"
         fOut.write(newLine + "\n")
     fIn.close()
     fOut.close()
