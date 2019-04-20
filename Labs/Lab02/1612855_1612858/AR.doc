@@ -1,0 +1,19 @@
+
+
+L(5) 1: ga, ms, nc, sc, al
+
+1. [nc=y, al=y, sc=y, ms=y]: 3572 ==> [ga=y]: 3519   <conf:(0.99)> lift:(5.77) lev:(0.08) conv:(54.85) 
+2. [ga=y, nc=y, sc=y, ms=y]: 3612 ==> [al=y]: 3519   <conf:(0.97)> lift:(5.94) lev:(0.08) conv:(32.13) 
+3. [ga=y, nc=y, al=y, ms=y]: 3635 ==> [sc=y]: 3519   <conf:(0.97)> lift:(6.2) lev:(0.08) conv:(26.22) 
+4. [nc=y, sc=y, ms=y]: 3698 ==> [ga=y, al=y]: 3519   <conf:(0.95)> lift:(6.71) lev:(0.09) conv:(17.63) 
+
+
+L(5) 2: ga, nc, sc, va, al
+
+1. [ga=y, al=y, va=y, sc=y]: 3579 ==> [nc=y]: 3529   <conf:(0.99)> lift:(5.79) lev:(0.08) conv:(58.22) 
+2. [nc=y, al=y, va=y, sc=y]: 3608 ==> [ga=y]: 3529   <conf:(0.98)> lift:(5.73) lev:(0.08) conv:(37.4) 
+3. [al=y, va=y, sc=y]: 3682 ==> [ga=y, nc=y]: 3529   <conf:(0.96)> lift:(6.9) lev:(0.09) conv:(20.59) 
+4. [ga=y, nc=y, al=y, va=y]: 3694 ==> [sc=y]: 3529   <conf:(0.96)> lift:(6.12) lev:(0.08) conv:(18.78)
+
+
+
