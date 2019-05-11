@@ -1,0 +1,61 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 3 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     sessions
+Instances:    100
+Attributes:   8
+              Home
+              Products
+              Search
+              Prod_A
+              Prod_B
+              Prod_C
+              Cart
+              Purchase
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 7
+Within cluster sum of squared errors: 128.85810810810813
+
+Initial starting points (random):
+
+Cluster 0: 1,1,1,0,0,1,1,0
+Cluster 1: 1,1,0,1,0,0,1,1
+Cluster 2: 1,0,1,1,1,1,1,1
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                         Cluster#
+Attribute    Full Data          0          1          2
+               (100.0)     (32.0)     (37.0)     (31.0)
+=======================================================
+Home               0.6     0.0938     0.7838     0.9032
+Products          0.72          1     0.6757     0.4839
+Search            0.43      0.375          0          1
+Prod_A            0.53     0.0313     0.8919     0.6129
+Prod_B            0.55          1     0.3784     0.2903
+Prod_C            0.45     0.6563     0.2162     0.5161
+Cart              0.61     0.4375     0.6757     0.7097
+Purchase          0.39     0.2813     0.4324     0.4516
+
+
+
+
+Time taken to build model (full training data) : 0.01 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0       32 ( 32%)
+1       37 ( 37%)
+2       31 ( 31%)
+

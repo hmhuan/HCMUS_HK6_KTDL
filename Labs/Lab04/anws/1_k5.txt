@@ -1,0 +1,65 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 5 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     sessions
+Instances:    100
+Attributes:   8
+              Home
+              Products
+              Search
+              Prod_A
+              Prod_B
+              Prod_C
+              Cart
+              Purchase
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 8
+Within cluster sum of squared errors: 113.58260073260074
+
+Initial starting points (random):
+
+Cluster 0: 1,1,1,0,0,1,1,0
+Cluster 1: 1,1,0,1,0,0,1,1
+Cluster 2: 1,0,1,1,1,1,1,1
+Cluster 3: 1,0,1,0,0,1,1,1
+Cluster 4: 0,1,1,0,1,1,1,1
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                         Cluster#
+Attribute    Full Data          0          1          2          3          4
+               (100.0)     (26.0)     (27.0)      (5.0)     (14.0)     (28.0)
+=============================================================================
+Home               0.6     0.9615     0.6667          1     0.8571          0
+Products          0.72     0.6923     0.6667          0     0.5714          1
+Search            0.43     0.6538          0          1     0.8571     0.3214
+Prod_A            0.53     0.4615      0.963          1     0.7143          0
+Prod_B            0.55     0.3846     0.4444        0.8     0.0714          1
+Prod_C            0.45     0.5385          0        0.8     0.5714     0.6786
+Cart              0.61     0.4615     0.6296        0.8          1        0.5
+Purchase          0.39          0     0.5185        0.4          1     0.3214
+
+
+
+
+Time taken to build model (full training data) : 0.01 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0       26 ( 26%)
+1       27 ( 27%)
+2        5 (  5%)
+3       14 ( 14%)
+4       28 ( 28%)
+
