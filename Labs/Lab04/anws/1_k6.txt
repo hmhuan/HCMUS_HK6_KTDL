@@ -1,0 +1,67 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 6 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     sessions
+Instances:    100
+Attributes:   8
+              Home
+              Products
+              Search
+              Prod_A
+              Prod_B
+              Prod_C
+              Cart
+              Purchase
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 4
+Within cluster sum of squared errors: 109.36117952928299
+
+Initial starting points (random):
+
+Cluster 0: 1,1,1,0,0,1,1,0
+Cluster 1: 1,1,0,1,0,0,1,1
+Cluster 2: 1,0,1,1,1,1,1,1
+Cluster 3: 1,0,1,0,0,1,1,1
+Cluster 4: 0,1,1,0,1,1,1,1
+Cluster 5: 0,0,0,1,1,0,1,1
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                         Cluster#
+Attribute    Full Data          0          1          2          3          4          5
+               (100.0)     (29.0)     (24.0)      (4.0)      (6.0)     (28.0)      (9.0)
+========================================================================================
+Home               0.6      0.931     0.9583          1          1          0          0
+Products          0.72     0.7241      0.875          0     0.1667          1     0.1111
+Search            0.43     0.7241     0.0833          1          1     0.3214     0.1111
+Prod_A            0.53     0.5862     0.9167          1     0.1667          0          1
+Prod_B            0.55     0.3448     0.3333          1          0          1     0.5556
+Prod_C            0.45     0.6552     0.0833       0.75     0.3333     0.6786          0
+Cart              0.61     0.5172     0.7083       0.75          1        0.5     0.6667
+Purchase          0.39     0.1379     0.5833        0.5     0.8333     0.3214     0.5556
+
+
+
+
+Time taken to build model (full training data) : 0 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0       29 ( 29%)
+1       24 ( 24%)
+2        4 (  4%)
+3        6 (  6%)
+4       28 ( 28%)
+5        9 (  9%)
+
