@@ -89,21 +89,25 @@ def kMean(data, k):
 	return centroids, idCluster, nCluster
 
 #
-def write_output_asgn(output_asgn, name, data):
+def write_output_asgn(output_asgn, name, data, idCluster):
 	line = ""
 	for el in name:		
 		if el != name[len(name) - 1]:
 			line += el + ", "
 		else:
-			line += el + "\n"
+			line += el + ", "
+	line += "Cluster\n"
 	output_asgn.write(line)
-	for row in data:
+	id = 0
+	for dataPoint in data:
 		line = ""
-		for i in range(len(row)):
-			if i != len(row) - 1:
-				line += str(row[i]) + ", "
+		for i in range(len(dataPoint)):
+			if i != len(dataPoint) - 1:
+				line += str(dataPoint[i]) + ", "
 			else:
-				line += str(row[i]) + "\n"
+				line += str(dataPoint[i]) + ", "
+		line += str(idCluster[id])+"\n"
+		id += 1
 		output_asgn.write(line)
 
 def write_output_model(output_model, name, centroids, nCluster):
@@ -136,7 +140,7 @@ def main():
 	
 	centroids, idCluster, nCluster = kMean(data, k)
 	# ghi ra file assignment.csv
-	write_output_asgn(output_asgn, nameAttribute, data)
+	write_output_asgn(output_asgn, nameAttribute, data, idCluster)
 	write_output_model(output_model, nameAttribute, centroids, nCluster)
 	
 	output_model.close()
