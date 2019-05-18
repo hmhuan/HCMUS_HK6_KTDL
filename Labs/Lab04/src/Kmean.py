@@ -71,11 +71,13 @@ def kMean(data, k):
 
 		# Cập nhật centroids
 		centroids = []
+		id = 0
 		for cluster in clusters:
 			if (len(cluster) != 0):
 				centroids.append(np.mean(cluster, axis = 0))
 			else:
 				centroids.append(np.zeros(8))
+			print
 
 		# delta = np.sum(np.abs(np.subtract(old_centroids, centroids)))
 		# print(iterations,":", delta)
