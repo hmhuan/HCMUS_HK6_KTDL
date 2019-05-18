@@ -1,0 +1,75 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 10 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     sessions
+Instances:    100
+Attributes:   8
+              Home
+              Products
+              Search
+              Prod_A
+              Prod_B
+              Prod_C
+              Cart
+              Purchase
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 4
+Within cluster sum of squared errors: 83.73972431077694
+
+Initial starting points (random):
+
+Cluster 0: 1,1,1,0,0,1,1,0
+Cluster 1: 1,1,0,1,0,0,1,1
+Cluster 2: 1,0,1,1,1,1,1,1
+Cluster 3: 1,0,1,0,0,1,1,1
+Cluster 4: 0,1,1,0,1,1,1,1
+Cluster 5: 0,0,0,1,1,0,1,1
+Cluster 6: 0,0,0,1,1,0,0,0
+Cluster 7: 1,0,1,0,0,0,1,1
+Cluster 8: 1,1,1,0,0,0,1,0
+Cluster 9: 1,1,1,1,1,0,1,1
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                         Cluster#
+Attribute    Full Data          0          1          2          3          4          5          6          7          8          9
+               (100.0)     (19.0)     (14.0)      (4.0)      (2.0)     (28.0)      (6.0)     (12.0)      (8.0)      (5.0)      (2.0)
+====================================================================================================================================
+Home               0.6     0.8947     0.9286          1          1          0          0       0.75          1          1          1
+Products          0.72     0.8947     0.9286          0        0.5          1          0        0.5          0          1          1
+Search            0.43     0.6842          0          1          1     0.3214     0.1667          0          1        0.8          1
+Prod_A            0.53     0.7895     0.9286          1          0          0          1     0.8333       0.25        0.2          1
+Prod_B            0.55     0.3684     0.4286          1          0          1     0.3333     0.3333      0.125        0.4        0.5
+Prod_C            0.45          1     0.1429       0.75          1     0.6786          0          0          0          0          0
+Cart              0.61     0.6316          1       0.75          1        0.5          1          0        0.5        0.8          1
+Purchase          0.39     0.2105     0.8571        0.5          1     0.3214     0.8333          0      0.375          0          1
+
+
+
+
+Time taken to build model (full training data) : 0.14 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+ 0       19 ( 19%)
+ 1       14 ( 14%)
+ 2        4 (  4%)
+ 3        2 (  2%)
+ 4       28 ( 28%)
+ 5        6 (  6%)
+ 6       12 ( 12%)
+ 7        8 (  8%)
+ 8        5 (  5%)
+ 9        2 (  2%)
+

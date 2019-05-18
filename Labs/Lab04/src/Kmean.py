@@ -23,72 +23,78 @@ def read_input_file(fileIn_name):
 	return nameAttribute, data
 	
 
-def distanceMeasurement(dataPoint, centroid):
+def distanceMeasure(dataPoint, centroid):
 	return np.sum(np.power(dataPoint - centroid, 2))
 	
 #
 def kMean(data, k):
+	"""
+	Input: tập data và giá trị k số cluster.
+	Output: 
+		- Centroids: [] các centroid của cluster.
+		- iDCluster: [] chứa giá trị id của cluster mà dataPoint thuộc về.
+		- nCluster: [] chứa số lượng phần tử thuộc mỗi cluster.
+		- SSE: giá trị Sum of Squared Error.
+	"""
 	# Inintialize
 	# random k giá trị làm centroid_id và lấy ra các centroid initial
-	initial_id = np.random.randint(100, size = k)
-	#temp = np.array([1, 1, 1, 1, 1, 1, 1, 1])
-	#centroids = [[1,1,1,0,0,1,1,0], [1,1,0,1,0,0,1,1]] # test voi 2 cluster nay
+	initial_id = np.random.randint(100, size = k)	
+	# centroids = [[1,1,1,0,0,1,1,0], [1,1,0,1,0,0,1,1], [1,0,1,1,1,1,1,1], [1,0,1,0,0,1,1,1], 
+	# 			[0,1,1,0,1,1,1,1], [0,0,0,1,1,0,1,1], [0,0,0,1,1,0,0,0], [1,0,1,0,0,0,1,1],
+	# 			[1,1,1,0,0,0,1,0], [1,1,1,1,1,0,1,1]] 
 	centroids = []
 	for id in initial_id:
-		centroids.append(data[id])
-	#for centroid in centroids:
-	#	print(np.sum(np.power(centroid - temp, 2)))
+		centroids.append(data[id])	
 
-	empty_cluster = [[] for x in range(k)]	
+	# Khởi tạo các cluster ban đầu là rỗng
+	clusters = [[] for x in range(k)]
+	# Khởi tạo các idCluster ban đầu của các điểm dữ liệu là 0
+	idCluster = np.zeros(len(data), dtype = int) 
+	iterations = 1 # khởi tạo số lần lặp ban đầu là 1
 	
-	clusters = empty_cluster
-	idCluster = np.zeros(len(data), dtype = int)
-	iterations = 0
 	while True:
 		old_centroids = centroids
-		#print(old_centroids)
-		clusters = [[] for x in range(k)]
 		id = 0
 		# Xet cac dataPoint vao cac cluster tuong ung
 		for dataPoint in data:
 			distances = []
 			for centroid in centroids:
-				distances.append(distanceMeasurement(dataPoint, centroid))
+				distances.append(distanceMeasure(dataPoint, centroid))
 			idCluster[id] = np.argmin(distances)
 			clusters[np.argmin(distances)].append(dataPoint)
 			id += 1
 
-		# Cap nhat centroid
+		# Cập nhật centroids
 		centroids = []
 		for cluster in clusters:
-			centroids.append(np.mean(cluster, axis = 0))
-			
-		# Neu centroid khong thay doi thi dung
-		#if np.mean(np.absolute(np.array(old_centroids) - np.array(centroids))) < 0.0001:
+			if (len(cluster) != 0):
+				centroids.append(np.mean(cluster, axis = 0))
+			else:
+				centroids.append(0)
+		# Nếu centroid không thay đổi thì dừng
 		if np.array_equal(old_centroids, centroids) == True:
 			break
 		iterations += 1
-	#print(centroids)
-	print("Iters =", iterations)
+		# reset lại các cluster để lặp
+		clusters = [[] for x in range(k)] 
+
+	#print("Iters =", iterations)
 	
-	id = 0
-	idData = 0
+	# test kết quả chạy thử
+	# id = 0
 	nCluster = []
 	for cluster in clusters:
-		for el in cluster:
-			print(id, ":", el)
 		nCluster.append(len(cluster))
-		print("So cluster", id, ":",len(cluster))
-		print(np.mean(cluster, axis = 0))
-		id += 1
-	
-	for dataPoint in data:
-		print(idCluster[idData], ":", dataPoint)
-		idData += 1
-	
-	return centroids, idCluster, nCluster
 
-#
+	# Khởi tạo giá trị Sum of Squared Error
+	SSE = 0 
+	idData = 0
+	for dataPoint in data:
+		SSE += distanceMeasure(dataPoint, centroids[idCluster[idData]])
+		idData += 1
+	return centroids, idCluster, nCluster, SSE
+
+# Hàm ghi ra file output assignment.csv
 def write_output_asgn(output_asgn, name, data, idCluster):
 	line = ""
 	for el in name:		
@@ -110,41 +116,50 @@ def write_output_asgn(output_asgn, name, data, idCluster):
 		id += 1
 		output_asgn.write(line)
 
-def write_output_model(output_model, name, centroids, nCluster):
+# Hàm ghi ra file output model.txt
+def write_output_model(output_model, name, centroids, nCluster, SSE):
 	
 	# ghi SSE
-	
-	# Ghi bang
+	output_model.write("Within cluster sum of squared errors: " + str(SSE) + "\n")
+	# Ghi bảng các giá trị
 	output_model.write("Cluster centroids:\n")
-	output_model.write("\t\t\tCluster#\n")
+	output_model.write("\t\t\t\tCluster#\n")
 	
 	line1, line2 = "Attribute", "         "
 	for i in range(len(nCluster)):
-		line1 += "\t" + str(i)
-		line2 += "\t" + str(nCluster[i])
+		line1 += "\t\t" + str(i)
+		line2 += "\t\t" + str(nCluster[i])
 	output_model.write(line1 + "\n")
 	output_model.write(line2 + "\n")
 	for i in range(len(name)):
 		line = name[i]
 		for centroid in centroids:
-			line += "\t" + str(round(centroid[i], 4))
+			line += "\t\t" + str(round(centroid[i], 4))
 		output_model.write(line + "\n")
 	
 	
-
 def main():
+	# Đọc vào các parameters
 	fileIn_name, output_model_name, output_asgn_name, k = sys.argv[1], sys.argv[2], sys.argv[3], int(sys.argv[4])
+
+	# Đọc dữu liệu từ file input .csv
 	nameAttribute, data = read_input_file(fileIn_name)
+	
+	# Mở 2 file output để ghi kết quả sau khi chạy
 	output_model = open(output_model_name, 'w')
 	output_asgn = open(output_asgn_name, 'w')
+
+	# Chạy hàm kMean
+	centroids, idCluster, nCluster, SSE = kMean(data, k)
 	
-	centroids, idCluster, nCluster = kMean(data, k)
-	# ghi ra file assignment.csv
+	# ghi ra file assignment.csv và model.txt
 	write_output_asgn(output_asgn, nameAttribute, data, idCluster)
-	write_output_model(output_model, nameAttribute, centroids, nCluster)
+	write_output_model(output_model, nameAttribute, centroids, nCluster, SSE)
 	
+	# Đóng 2 file để lưu
 	output_model.close()
 	output_asgn.close()
+	
 if __name__ == "__main__":
     # execute only if run as a script
     main()
