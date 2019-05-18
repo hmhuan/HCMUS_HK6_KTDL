@@ -1,6 +1,7 @@
 import sys
 import csv
 import numpy as np
+import math
 from scipy.spatial.distance import cdist
 
 # Đọc dữ liệu từ file input *.csv 
@@ -24,7 +25,7 @@ def read_input_file(fileIn_name):
 	
 
 def distanceMeasure(dataPoint, centroid):
-	return np.sum(np.power(dataPoint - centroid, 2))
+	return math.sqrt(np.sum(np.power(dataPoint - centroid, 2)))
 	
 #
 def kMean(data, k):
@@ -38,12 +39,15 @@ def kMean(data, k):
 	"""
 	# Inintialize
 	# random k giá trị làm centroid_id và lấy ra các centroid initial
-	initial_id = np.random.randint(100, size = k)	
+	#print(len(data))
+	initial_id = np.random.choice(len(data), size = k, replace = False)	
 	# centroids = [[1,1,1,0,0,1,1,0], [1,1,0,1,0,0,1,1], [1,0,1,1,1,1,1,1], [1,0,1,0,0,1,1,1], 
 	# 			[0,1,1,0,1,1,1,1], [0,0,0,1,1,0,1,1], [0,0,0,1,1,0,0,0], [1,0,1,0,0,0,1,1],
 	# 			[1,1,1,0,0,0,1,0], [1,1,1,1,1,0,1,1]] 
+	#centroids = [[1,1,1,0,0,1,1,0], [1,1,0,1,0,0,1,1]]
 	centroids = []
 	for id in initial_id:
+		#print(id, data[id])
 		centroids.append(data[id])	
 
 	# Khởi tạo các cluster ban đầu là rỗng
@@ -53,7 +57,8 @@ def kMean(data, k):
 	iterations = 1 # khởi tạo số lần lặp ban đầu là 1
 	
 	while True:
-		old_centroids = centroids
+		old_centroids = np.copy(centroids)
+		print("Iteration", iterations)
 		id = 0
 		# Xet cac dataPoint vao cac cluster tuong ung
 		for dataPoint in data:
@@ -70,28 +75,32 @@ def kMean(data, k):
 			if (len(cluster) != 0):
 				centroids.append(np.mean(cluster, axis = 0))
 			else:
-				centroids.append(0)
+				centroids.append(np.zeros(8))
+
+		# delta = np.sum(np.abs(np.subtract(old_centroids, centroids)))
+		# print(iterations,":", delta)
 		# Nếu centroid không thay đổi thì dừng
 		if np.array_equal(old_centroids, centroids) == True:
 			break
+		#if ( delta < 0.0001): 
+		#	break
 		iterations += 1
-		# reset lại các cluster để lặp
+		# reset lại các cluster để cho vòng lặp tiếp theo
 		clusters = [[] for x in range(k)] 
-
-	#print("Iters =", iterations)
 	
 	# test kết quả chạy thử
-	# id = 0
 	nCluster = []
 	for cluster in clusters:
 		nCluster.append(len(cluster))
 
 	# Khởi tạo giá trị Sum of Squared Error
+	print("Calculating SSE value.")
 	SSE = 0 
 	idData = 0
 	for dataPoint in data:
 		SSE += distanceMeasure(dataPoint, centroids[idCluster[idData]])
 		idData += 1
+	print("SSE value =", SSE)
 	return centroids, idCluster, nCluster, SSE
 
 # Hàm ghi ra file output assignment.csv
@@ -120,21 +129,23 @@ def write_output_asgn(output_asgn, name, data, idCluster):
 def write_output_model(output_model, name, centroids, nCluster, SSE):
 	
 	# ghi SSE
-	output_model.write("Within cluster sum of squared errors: " + str(SSE) + "\n")
+	output_model.write("Within cluster sum of squared errors: %f \n" %(SSE))
 	# Ghi bảng các giá trị
 	output_model.write("Cluster centroids:\n")
-	output_model.write("\t\t\t\tCluster#\n")
+	space = "\t\t" * int((len(centroids) / 2))
+	output_model.write(space + "Cluster#\n")
 	
 	line1, line2 = "Attribute", "         "
 	for i in range(len(nCluster)):
-		line1 += "\t\t" + str(i)
-		line2 += "\t\t" + str(nCluster[i])
+		line1 += "%10s" % i
+		line2 += "%10s" % ("(" + str(nCluster[i]) + ")")
 	output_model.write(line1 + "\n")
 	output_model.write(line2 + "\n")
+	output_model.write("==========" + "==========" * int((len(centroids))) + "\n")
 	for i in range(len(name)):
-		line = name[i]
+		line = "%-9s" % name[i]
 		for centroid in centroids:
-			line += "\t\t" + str(round(centroid[i], 4))
+			line += "%10s" % round(centroid[i], 4) #str(round(centroid[i], 4))
 		output_model.write(line + "\n")
 	
 	
