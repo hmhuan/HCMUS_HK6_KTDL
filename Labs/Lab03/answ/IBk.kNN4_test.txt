@@ -1,0 +1,109 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 4 -W 0 -E -I -A "weka.core.neighboursearch.KDTree -A \"weka.core.EuclideanDistance -R first-last\" -S weka.core.neighboursearch.kdtrees.SlidingMidPointOfWidestSide -W 0.01 -L 40 -N" -num-decimal-places 4
+Relation:     letter
+Instances:    16000
+Attributes:   17
+              x-box
+              y-box
+              width
+              high
+              onpix
+              x-bar
+              y-bar
+              x2bar
+              y2bar
+              xybar
+              x2ybr
+              xy2br
+              x-ege
+              xegvy
+              y-ege
+              yegvx
+              class
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 4 inverse-distance-weighted nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.08 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 8.28 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       19853               99.265  %
+Incorrectly Classified Instances       147                0.735  %
+Kappa statistic                          0.9924
+Mean absolute error                      0.0013
+Root mean squared error                  0.0222
+Relative absolute error                  1.8157 %
+Root relative squared error             11.5539 %
+Total Number of Instances            20000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.994    0.000    1.000      0.994    0.997      0.997    1.000     1.000     A
+                 0.988    0.001    0.983      0.988    0.986      0.985    1.000     0.999     B
+                 0.992    0.000    0.996      0.992    0.994      0.994    1.000     0.999     C
+                 0.996    0.001    0.985      0.996    0.991      0.990    1.000     0.999     D
+                 0.987    0.001    0.983      0.987    0.985      0.984    1.000     0.998     E
+                 0.991    0.001    0.987      0.991    0.989      0.989    1.000     0.999     F
+                 0.984    0.000    0.992      0.984    0.988      0.988    1.000     0.997     G
+                 0.981    0.000    0.988      0.981    0.984      0.984    1.000     0.997     H
+                 0.993    0.000    0.993      0.993    0.993      0.993    1.000     1.000     I
+                 0.991    0.000    0.992      0.991    0.991      0.991    1.000     1.000     J
+                 0.986    0.000    0.988      0.986    0.987      0.987    1.000     0.998     K
+                 0.997    0.000    0.995      0.997    0.996      0.996    1.000     1.000     L
+                 0.996    0.000    0.999      0.996    0.997      0.997    1.000     1.000     M
+                 0.996    0.000    0.996      0.996    0.996      0.996    1.000     0.999     N
+                 0.992    0.001    0.985      0.992    0.989      0.988    1.000     1.000     O
+                 0.990    0.000    0.995      0.990    0.993      0.992    1.000     0.999     P
+                 0.995    0.000    0.996      0.995    0.996      0.995    1.000     1.000     Q
+                 0.984    0.000    0.996      0.984    0.990      0.990    1.000     0.997     R
+                 0.997    0.000    0.999      0.997    0.998      0.998    1.000     1.000     S
+                 0.996    0.000    0.996      0.996    0.996      0.996    1.000     1.000     T
+                 0.999    0.000    0.996      0.999    0.998      0.997    1.000     1.000     U
+                 0.996    0.000    0.992      0.996    0.994      0.994    1.000     0.999     V
+                 0.997    0.000    0.995      0.997    0.996      0.996    1.000     1.000     W
+                 0.992    0.000    0.990      0.992    0.991      0.991    1.000     0.999     X
+                 0.997    0.000    0.994      0.997    0.996      0.995    1.000     1.000     Y
+                 0.997    0.000    0.997      0.997    0.997      0.997    1.000     1.000     Z
+Weighted Avg.    0.993    0.000    0.993      0.993    0.993      0.992    1.000     0.999     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   h   i   j   k   l   m   n   o   p   q   r   s   t   u   v   w   x   y   z   <-- classified as
+ 784   1   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   3   0 |   a = A
+   0 757   0   1   4   0   0   2   0   0   0   0   0   0   0   0   0   1   0   0   0   1   0   0   0   0 |   b = B
+   0   0 730   0   2   0   1   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   2   0   0   0 |   c = C
+   0   1   0 802   0   0   0   1   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0 |   d = D
+   0   1   2   0 758   0   2   0   0   0   3   0   0   0   0   0   0   0   0   0   0   0   0   1   0   1 |   e = E
+   0   0   0   1   0 768   0   0   0   0   0   0   0   0   0   4   0   0   0   2   0   0   0   0   0   0 |   f = F
+   0   1   1   2   2   0 761   0   0   0   0   0   0   0   4   0   0   0   0   0   0   0   1   1   0   0 |   g = G
+   0   1   0   3   0   0   2 720   0   0   3   0   0   1   2   0   0   0   0   0   2   0   0   0   0   0 |   h = H
+   0   0   0   0   0   0   0   0 750   5   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 |   i = I
+   0   0   0   0   0   1   0   1   5 740   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 |   j = J
+   0   0   0   1   2   0   0   1   0   0 729   0   0   0   0   0   0   0   0   0   0   0   0   6   0   0 |   k = K
+   0   0   0   0   0   0   0   0   0   0   0 759   0   0   0   0   1   1   0   0   0   0   0   0   0   0 |   l = L
+   0   2   0   0   0   0   0   0   0   0   0   0 789   0   0   0   0   0   0   0   0   1   0   0   0   0 |   m = M
+   0   0   0   0   0   0   0   2   0   0   0   0   0 780   1   0   0   0   0   0   0   0   0   0   0   0 |   n = N
+   0   0   0   2   0   0   0   0   0   0   0   0   0   1 747   0   1   0   0   0   1   1   0   0   0   0 |   o = O
+   0   0   0   0   0   7   0   0   0   0   0   0   0   0   0 795   0   1   0   0   0   0   0   0   0   0 |   p = P
+   0   0   0   0   0   0   1   0   0   0   0   0   0   0   3   0 779   0   0   0   0   0   0   0   0   0 |   q = Q
+   0   5   0   0   0   0   0   2   0   0   1   3   0   0   0   0   0 746   0   0   0   1   0   0   0   0 |   r = R
+   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0 746   0   0   0   0   0   0   1 |   s = S
+   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0 793   0   0   0   0   2   0 |   t = T
+   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 812   0   0   0   0   0 |   u = U
+   0   1   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 761   1   0   0   0 |   v = V
+   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0   1 750   0   0   0 |   w = W
+   0   0   0   1   2   0   0   0   0   0   2   0   0   0   0   0   0   0   1   0   0   0   0 781   0   0 |   x = X
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   1   0   0 784   0 |   y = Y
+   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0 732 |   z = Z
+
