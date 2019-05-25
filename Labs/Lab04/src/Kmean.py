@@ -25,7 +25,7 @@ def read_input_file(fileIn_name):
 	
 
 def distanceMeasure(dataPoint, centroid):
-	return math.sqrt(np.sum(np.power(dataPoint - centroid, 2)))
+	return np.linalg.norm(dataPoint - centroid) #math.sqrt(np.sum(np.power(dataPoint - centroid, 2)))
 	
 #
 def kMean(data, k):
@@ -58,6 +58,7 @@ def kMean(data, k):
 	
 	while True:
 		old_centroids = np.copy(centroids)
+		SSE = 0
 		print("Iteration", iterations)
 		id = 0
 		# Xet cac dataPoint vao cac cluster tuong ung
@@ -67,8 +68,10 @@ def kMean(data, k):
 				distances.append(distanceMeasure(dataPoint, centroid))
 			idCluster[id] = np.argmin(distances)
 			clusters[np.argmin(distances)].append(dataPoint)
+			SSE += distances[idCluster[id]]
 			id += 1
-
+		print("SSE = ", SSE)
+		print("---------------------------")
 		# Cập nhật centroids
 		centroids = []
 		id = 0
@@ -77,8 +80,6 @@ def kMean(data, k):
 				centroids.append(np.mean(cluster, axis = 0))
 			else:
 				centroids.append(np.zeros(8))
-			print
-
 		# delta = np.sum(np.abs(np.subtract(old_centroids, centroids)))
 		# print(iterations,":", delta)
 		# Nếu centroid không thay đổi thì dừng
@@ -96,7 +97,7 @@ def kMean(data, k):
 		nCluster.append(len(cluster))
 
 	# Khởi tạo giá trị Sum of Squared Error
-	print("Calculating SSE value.")
+	# print("Calculating SSE value.")
 	SSE = 0 
 	idData = 0
 	for dataPoint in data:
