@@ -57,11 +57,12 @@ def kMean(data, k):
 	iterations = 1 # khởi tạo số lần lặp ban đầu là 1
 	
 	while True:
-		old_centroids = np.copy(centroids)
+		pre_centroids = np.copy(centroids)
 		SSE = 0
 		print("Iteration %d:" % iterations)
 		id = 0
 		# Xet cac dataPoint vao cac cluster tuong ung
+		print("\tSample i: cluster")
 		for dataPoint in data:
 			distances = []
 			for centroid in centroids:
@@ -70,7 +71,7 @@ def kMean(data, k):
 			clusters[np.argmin(distances)].append(dataPoint)
 			SSE += distances[idCluster[id]]
 			id += 1
-			print("--Sample %d: %d" %(id, idCluster[id - 1]))
+			print("\tSample %d: %d" %(id, idCluster[id - 1]))
 		print("SSE = ", SSE)
 		print("---------------------------")
 		# Cập nhật centroids
@@ -83,7 +84,7 @@ def kMean(data, k):
 		# delta = np.sum(np.abs(np.subtract(old_centroids, centroids)))
 		# print(iterations,":", delta)
 		# Nếu centroid không thay đổi thì dừng
-		if np.array_equal(old_centroids, centroids) == True:
+		if np.array_equal(pre_centroids, centroids) == True:
 			break
 		#if ( delta < 0.0001): 
 		#	break

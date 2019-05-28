@@ -1,0 +1,16 @@
+k = 3
+	#2. thuộc cluster 3
+		Prod_A = 0.6129 > Prod_C = 0.5162 -> Chọn Prod_A
+	#3. thuộc cluster 3
+		Prod_A = 0.6129 > Prod_B = 0.2903 -> Chọn Prod_A
+		
+k = 5
+	#2. thuộc cluster 1
+		Prod_A = 0.4615 < Prod_C = 0.5385 -> Chọn Prod_C
+	#3. thuộc cluster 1
+		Prod_A = 0.4615 > Prod_B = 0.3846 -> Chọn Prod_A
+k = 7
+	#2. thuộc cluster 7
+		Prod_A = 0.6471 > Prod_C = 0.0 -> Chọn Prod_A
+	#3. thuộc cluster 7
+		Prod_A = 0.6471 > Prod_B = 0.3529 -> Chọn Prod_A
