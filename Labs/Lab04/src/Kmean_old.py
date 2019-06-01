@@ -24,7 +24,7 @@ def read_input_file(fileIn_name):
 	
 
 def distanceMeasure(dataPoint, centroid):
-	return np.sum(np.power(dataPoint - centroid, 2))
+	return np.power(np.linalg.norm(dataPoint - centroid), 2) # np.sum(np.power(dataPoint - centroid, 2))
 	
 #
 def kMean(data, k):
@@ -33,10 +33,12 @@ def kMean(data, k):
 	initial_id = np.random.randint(100, size = k)
 	
 	# test voi 10 cluster nay
-	centroids = [[1,1,1,0,0,1,1,0], [1,1,0,1,0,0,1,1], [1,0,1,1,1,1,1,1], [1,0,1,0,0,1,1,1], 
-				[0,1,1,0,1,1,1,1], [0,0,0,1,1,0,1,1], [0,0,0,1,1,0,0,0], [1,0,1,0,0,0,1,1],
-				[1,1,1,0,0,0,1,0], [1,1,1,1,1,0,1,1]] 
-	
+	# centroids = [[1,1,1,0,0,1,1,0], [1,1,0,1,0,0,1,1], [1,0,1,1,1,1,1,1], [1,0,1,0,0,1,1,1], 
+	# 			[0,1,1,0,1,1,1,1], [0,0,0,1,1,0,1,1], [0,0,0,1,1,0,0,0], [1,0,1,0,0,0,1,1],
+	# 			[1,1,1,0,0,0,1,0], [1,1,1,1,1,0,1,1]] 
+	centroids = [[1,1,1,0,0,1,1,0], 
+            [1,1,0,1,0,0,1,1], 
+            [1,0,1,1,1,1,1,1]]
 	# centroids = []
 	# for id in initial_id:
 	# 	centroids.append(data[id])	
@@ -69,7 +71,7 @@ def kMean(data, k):
 		# reset lại các cluster để lặp
 		clusters = [[] for x in range(k)] 
 
-	#print("Iters =", iterations)
+	print("Iters =", iterations)
 	
 	# test kết quả chạy thử
 	# id = 0

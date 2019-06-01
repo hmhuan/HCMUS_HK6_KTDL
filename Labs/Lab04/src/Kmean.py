@@ -25,7 +25,8 @@ def read_input_file(fileIn_name):
 	
 
 def distanceMeasure(dataPoint, centroid):
-	return np.linalg.norm(dataPoint - centroid) #math.sqrt(np.sum(np.power(dataPoint - centroid, 2)))
+	return np.sum(np.power(dataPoint - centroid, 2))
+	#np.power(np.linalg.norm(dataPoint - centroid), 2) #
 	
 #
 def kMean(data, k):
@@ -41,14 +42,17 @@ def kMean(data, k):
 	# random k giá trị làm centroid_id và lấy ra các centroid initial
 	#print(len(data))
 	initial_id = np.random.choice(len(data), size = k, replace = False)	
-	# centroids = [[1,1,1,0,0,1,1,0], [1,1,0,1,0,0,1,1], [1,0,1,1,1,1,1,1], [1,0,1,0,0,1,1,1], 
-	# 			[0,1,1,0,1,1,1,1], [0,0,0,1,1,0,1,1], [0,0,0,1,1,0,0,0], [1,0,1,0,0,0,1,1],
-	# 			[1,1,1,0,0,0,1,0], [1,1,1,1,1,0,1,1]] 
-	#centroids = [[1,1,1,0,0,1,1,0], [1,1,0,1,0,0,1,1]]
-	centroids = []
-	for id in initial_id:
-		#print(id, data[id])
-		centroids.append(data[id])	
+	centroids = [[1,1,1,0,0,1,1,0],
+            [1,1,0,1,0,0,1,1],
+            [1,0,1,1,1,1,1,1],
+            [1,0,1,0,0,1,1,1],
+            [0,1,1,0,1,1,1,1],
+            [0,0,0,1,1,0,1,1],
+            [0,0,0,1,1,0,0,0],
+            [1,0,1,0,0,0,1,1]]
+	#centroids = []
+	#for id in initial_id:
+	#	centroids.append(data[id])	
 
 	# Khởi tạo các cluster ban đầu là rỗng
 	clusters = [[] for x in range(k)]
@@ -57,12 +61,12 @@ def kMean(data, k):
 	iterations = 1 # khởi tạo số lần lặp ban đầu là 1
 	
 	while True:
-		pre_centroids = np.copy(centroids)
+		pre_centroids = np.copy(centroids) #lưu lại centroids cũ
 		SSE = 0
 		print("Iteration %d:" % iterations)
 		id = 0
 		# Xet cac dataPoint vao cac cluster tuong ung
-		print("\tSample i: cluster")
+		#print("\tSample i: cluster")
 		for dataPoint in data:
 			distances = []
 			for centroid in centroids:
@@ -71,7 +75,7 @@ def kMean(data, k):
 			clusters[np.argmin(distances)].append(dataPoint)
 			SSE += distances[idCluster[id]]
 			id += 1
-			print("\tSample %d: %d" %(id, idCluster[id - 1]))
+			#print("\tSample %d: %d" %(id, idCluster[id - 1]))
 		print("SSE = ", SSE)
 		print("---------------------------")
 		# Cập nhật centroids
