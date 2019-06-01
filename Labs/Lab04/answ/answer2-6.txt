@@ -1,6 +1,7 @@
 k = 3
 	#2. thuộc cluster 3
 		Prod_A = 0.6129 > Prod_C = 0.5162 -> Chọn Prod_A
+		- Ở cụm này, người dùng chủ yếu mua sản phẩm A (Prod_A) nhiều hơn so với sản phẩm C (Prod_C) nên sẽ giới thiệu người dùng mới sản phẩm A.
 	#3. thuộc cluster 3
 		Prod_A = 0.6129 > Prod_B = 0.2903 -> Chọn Prod_A
 		

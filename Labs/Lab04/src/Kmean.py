@@ -42,17 +42,17 @@ def kMean(data, k):
 	# random k giá trị làm centroid_id và lấy ra các centroid initial
 	#print(len(data))
 	initial_id = np.random.choice(len(data), size = k, replace = False)	
-	centroids = [[1,1,1,0,0,1,1,0],
-            [1,1,0,1,0,0,1,1],
-            [1,0,1,1,1,1,1,1],
-            [1,0,1,0,0,1,1,1],
-            [0,1,1,0,1,1,1,1],
-            [0,0,0,1,1,0,1,1],
-            [0,0,0,1,1,0,0,0],
-            [1,0,1,0,0,0,1,1]]
-	#centroids = []
-	#for id in initial_id:
-	#	centroids.append(data[id])	
+	# centroids = [[1,1,1,0,0,1,1,0],
+    #         [1,1,0,1,0,0,1,1],
+    #         [1,0,1,1,1,1,1,1],
+    #         [1,0,1,0,0,1,1,1],
+    #         [0,1,1,0,1,1,1,1],
+    #         [0,0,0,1,1,0,1,1],
+    #         [0,0,0,1,1,0,0,0],
+    #         [1,0,1,0,0,0,1,1]]
+	centroids = []
+	for id in initial_id:
+		centroids.append(data[id])	
 
 	# Khởi tạo các cluster ban đầu là rỗng
 	clusters = [[] for x in range(k)]
