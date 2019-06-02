@@ -1,0 +1,72 @@
+k=4: 7
+	#2. (+1) thuộc cluster 2
+		Prod_A = 1 > Prod_C = 0.6667 -> Chọn Prod_A
+	#3. (+1) thuộc cluster 0 
+		Prod_A = 0.0323 > Prod_B = 1 -> Chọn Prod_B
+	#4. (+2)
+		- nhận biết người dùng thông thường: cluster 2
+		- Nhận biết người dùng tập trung:cluster 1
+		- Nhận biết người dùng tìm kiếm: ko
+	#5. (+2)
+		- sản phẩm đơn lẻ: cluster 1 (Prod_A)
+			+ đặc điểm hành vi duyệt trang: Home - Product - Prod_A - Cart
+			+ xu hướng thanh toán: trung bình ~ 50%.
+		- nhóm các sản phẩm:
+		cluster 0 (Prod_B & Prod_C) {trên 50%}
+			+ đặc điểm hành vi duyệt trang: Product -> Prod_B & Prod_C -> Cart
+			+ xu hướng thanh toán: thấp (~ 30%).
+		cluster 2 (Pro_A & Prod_B & Prod_C) {trên 50%}
+			+ đặc điểm hành vi duyệt trang: Home -> Search -> Prod_A & Prod_B & Prod_C -> Cart
+			+ xu hướng thanh toán: thấp (~ 30%).
+	#6. (+1)
+		- Có, cluster0: Chiến dịch quảng cáo sản phẩm B thành công hơn.
+===========================================================================================================
+k=6: 
+	#2. (+1) thuộc cluster 2
+		Prod_A = 1 > Prod_C = 0.75 -> Chọn Prod_A
+	#3. (+1) thuộc cluster 4
+		Prod_A = 0 > Prod_B = 1 -> Chọn Prod_B
+	#4. (+1)
+		- nhận biết người dùng thông thường: cluster 2 (A-1, B-1, C-0.75)
+		- Nhận biết người dùng tập trung:cluster 3 (nhưng ko chính xác với thực tế)
+		- Nhận biết người dùng tìm kiếm: cluster 2, 3 (thực tế: cluster 1, 4)
+	#5. (+2)
+		- sản phẩm đơn lẻ: cluster 5 (Prod_A)
+			+ đặc điểm hành vi duyệt trang: Home - Product - Prod_A - Cart
+			+ xu hướng thanh toán: trung bình ~ 50%.
+		- nhóm các sản phẩm:
+		cluster 0 (Prod_B & Prod_C) {trên 50%}
+			+ đặc điểm hành vi duyệt trang: Product -> Prod_B & Prod_C -> Cart
+			+ xu hướng thanh toán: thấp (~ 30%).
+		cluster 2 (Pro_A & Prod_B & Prod_C) {trên 50%}
+			+ đặc điểm hành vi duyệt trang: Home -> Search -> Prod_A & Prod_B & Prod_C -> Cart
+			+ xu hướng thanh toán: thấp (~ 30%).
+	#6. (+1)
+		- Có, cluster 5: Chiến dịch quảng cáo sản phẩm A thành công hơn.
+===========================================================================================================
+k=8: 
+	#2. (+1) thuộc cluster 2
+		Prod_A = 1 > Prod_C = 0.8333 -> Chọn Prod_A
+	#3. (+1) thuộc cluster 4
+		Prod_A = 0 > Prod_B = 1 -> Chọn Prod_B
+	#4. (+1)
+		- nhận biết người dùng thông thường: cluster 0 (A-0.7778, B-0.3889, C-0.9444 , ABC cao, purchase thấp)
+		- Nhận biết người dùng tập trung:cluster 5
+		- Nhận biết người dùng tìm kiếm: ko, vì có 2 cluster = 1
+		- sản phẩm đơn lẻ:
+		cluster 3 (Prod_C)
+			+ đặc điểm hành vi duyệt trang: Home - Search - Prod_C - Cart - Purchase
+			+ xu hướng thanh toán: trung bình ~ 100%.
+		cluster 5 (Prod_A)
+			+ đặc điểm hành vi duyệt trang: Prod_A - Cart - Purchase
+			+ xu hướng thanh toán: trung bình ~ 85%.
+		- nhóm các sản phẩm:
+		cluster 0 (Prod_A & Prod_C) {trên 50%}
+			+ đặc điểm hành vi duyệt trang: Product -> Prod_A & Prod_C -> Cart
+			+ xu hướng thanh toán: thấp (~ 22%).
+		cluster 2 (Pro_A & Prod_B & Prod_C) {trên 50%}
+			+ đặc điểm hành vi duyệt trang: Home -> Search -> Prod_A & Prod_B & Prod_C -> Cart
+			+ xu hướng thanh toán: thấp (~ 33%).
+	#6. (+1)
+		- Có, cluster 5: Chiến dịch quảng cáo sản phẩm A thành công hơn.
+===========================================================================================================

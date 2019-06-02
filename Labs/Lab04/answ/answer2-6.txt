@@ -1,6 +1,6 @@
 Quy ước, mỗi cái nếu thỏa là +1, không thỏa y/c là -1. Sau khi xong sẽ lấy tổng cái nào cao hơn sẽ chọn.
 Câu 2, 3 sử dụng độ đo norm2 để tính gần
-k = 3
+k = 3 (4)
 	#2. (+1)
 		user - điểm mới: [1, 0, 1, 0, 1, 0, 0, 0]
 		danh sách khoảng cách giữa điểm mới với các cụm: 
@@ -16,10 +16,10 @@ k = 3
 		=> thuộc cụm 1 (cluster0)
 		Prod_B = 1 > Prod_A = 0.0313 -> Chọn Prod_B
 		- Ở cụm này người dùng chủ yếu mua sản phẩm B (Prod_B), nên giới thiệu sản phẩm B cho người dùng mới này.
-	#4.
-		- nhận biết người dùng thông thường: Không, vì centroid của các cụm tại các giá trị Prod_A, Prod_B 
+	#4. (-1)
+		- Nhận biết người dùng thông thường: Không, vì centroid của các cụm tại các giá trị Prod_A, Prod_B 
 		và Prod_C không chênh lệch nhau và cũng không có cụm nào cao.
-		- Nhận biết người dùng tập trung: Có
+		- Nhận biết người dùng tập trung: Không.
 		- Nhận biết người dùng tìm kiếm: Có, cụm 3 (cluster2) có Search là 1. 
 	#5. (+2)
 		- sản phẩm đơn lẻ: cụm 1 (cluster0 - Prod_B)
@@ -32,7 +32,7 @@ k = 3
 	#6. (+1)
 		- Có, cụm 1 (cluster0 - Products). Chiến dịch quảng cáo sản phẩm B thành công hơn.
 ================================================================================================================
-k = 5
+k = 5 (8)
 	#2. (+1)
 		user - điểm mới: [1, 0, 1, 0, 1, 0, 0, 0]
 		danh sách khoảng cách giữa điểm mới với các cụm: 
@@ -45,26 +45,54 @@ k = 5
 			[1.49, 1.829, 2.3409, 2.08, 1.24]
 		=> thuộc cụm 5 (cluster4)
 		Prod_B = 1 > Prod_A = 0.0 -> Chọn Prod_B
-	#4.
+	#4. (+3)
 		- Nhận biết người dùng thông thường: Có, cụm 3 (cluster2), có tỉ lệ xem Prod_A, Prod_B và 
 		Prod_C cao hơn hẳn các cụm còn lại.
-		- Nhận biết người dùng tập trung: Có, cụm 3 (cluster2), Search và Cart cao.
+			+ xu hướng thanh toán: thấp (0.4)
+			(có 5 người, 3 người không thanh toán)
+			+ 10,1,0,1,1,1,1,1,0,cluster2
+			+ 14,1,0,1,1,1,1,0,0,cluster2
+			+ 49,1,0,1,1,0,1,1,0,cluster2
+		- Nhận biết người dùng tập trung: Có, cụm 2 (cluster1), Search (0.0) và Cart (0.63).
+			+ xu hướng thanh toán: trung bình (0.51).
+			(Có 27 người, tỉ lệ người thanh toán chỉ trên 50%)
+			+ 55,0,0,0,1,1,0,1,1,cluster1
+			+ 58,1,1,0,1,0,0,1,1,cluster1
+			+ 59,1,1,0,1,1,0,1,1,cluster1
 		- Người dùng tìm kiếm: Có, cụm 3 (cluster2) có tỉ lệ người dùng sử dụng chức năng search là 100%.
-	#5.
+			xu hướng thanh toán: thấp (0.4).
+			(Có 5 người, 3 người không thanh toán)
+			+ 10,1,0,1,1,1,1,1,0,cluster2
+			+ 14,1,0,1,1,1,1,0,0,cluster2
+			+ 49,1,0,1,1,0,1,1,0,cluster2
+	#5. (+2)
 		- sản phẩm đơn lẻ: 
-		(1) cụm 2 - Prod_A
-			+ đặc điểm hành vi duyệt cụm: vào thẳng trang Prod_A
+		(1) cụm 2 (cluster1) - Prod_A
+			+ đặc điểm hành vi duyệt cụm:Home -> Products -> Prod_A
 			+ xu hướng thanh toán: trung bình (50%)
-		(2) cụm 5 - Prod_B
+			(tỉ lệ thanh toán trung bình 0.52)
+			+ 32,1,1,0,0,1,0,1,1,cluster1
+			+ 58,1,1,0,1,0,0,1,1,cluster1
+			+ 23,1,1,0,1,0,0,0,0,cluster1 (không thanh toán)
+			+ 61,1,1,0,1,0,0,0,0,cluster1 (không thanh toán)
+		(2) cụm 5 (cluster4) - Prod_B
 			+ đặc điểm hành vi duyệt cụm: Vào trang Products -> vào trang Prod_B
 			+ xu hướng thanh toán: thấp (30%)
+
+			+ 43,0,1,0,0,1,0,0,0,cluster4
+			+ 45,0,1,1,0,1,0,1,0,cluster4
+			+ 92,0,1,1,0,1,0,0,0,cluster4
 		- nhóm các sản phẩm: cụm 3 - Prod_A, Prod_B, Prod_C 
 			+ đặc điểm hành vi duyệt cụm: Home -> Search -> các trang sp Prod_A, Prod_B, Prod_C
 			+ xu hướng thanh toán: thấp (40%)
-	#6.
+			(3 người không thanh toán trong cụm)
+			+ 10,1,0,1,1,1,1,1,0,cluster2
+			+ 14,1,0,1,1,1,1,0,0,cluster2
+			+ 49,1,0,1,1,0,1,1,0,cluster2
+	#6. (+1)
 		- Có, cụm 5 (cluster4). Chiến dịch quảng cáo sản phẩm B thành công hơn.
 ===========================================================================================================
-k = 7
+k = 7 (6)
 	#2. (+1)
 		user - điểm mới: [1, 0, 1, 0, 1, 0, 0, 0]
 		danh sách khoảng cách giữa điểm mới với các cụm: 
@@ -77,9 +105,15 @@ k = 7
 			[1.59, 2.098, 2.4, 2.133, 1.2, 2.138, 1.629]
 		=> thuộc cụm 5 (cluster4)
 		Prod_B = 1 > Prod_A = 0.0 -> Chọn Prod_B
-	#4.
-		- Nhận biết người dùng thông thường: Có, cụm 3 (cluster2), có tỉ lệ xem Prod_A, Prod_B và Prod_C cao hơn hẳn các cụm còn lại.
-		- Nhận biết người dùng tập trung: Có, cụm
+	#4. (+1)
+		- Nhận biết người dùng thông thường: Có, cụm 3 (cluster2), có tỉ lệ xem Prod_A, Prod_B và Prod_C 
+		cao hơn hẳn các cụm còn lại.
+			+ xu hướng thanh toán: trung bình (Purchase = 0.5)
+			+ 4,1,0,1,1,1,0,1,1,cluster2
+			+ 9,1,0,1,1,1,1,1,1,cluster2
+			+ 10,1,0,1,1,1,1,1,0,cluster2
+			+ 14,1,0,1,1,1,1,0,0,cluster2
+		- Nhận biết người dùng tập trung: Không.
 		- Người dùng tìm kiếm: Không (có 2 cụm có cùng Search là 1).
 	#5.
 		- sản phẩm đơn lẻ:
