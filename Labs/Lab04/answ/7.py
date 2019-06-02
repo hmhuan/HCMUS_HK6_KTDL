@@ -35,7 +35,7 @@ print("#3")
 new_3 = [0, 1, 0, 0, 0, 1, 0, 0]
 distances = []
 for i in range(centroids.shape[0]):
-    distances.append(np.linalg.norm(centroids[i] - new_2))
+    distances.append(np.linalg.norm(centroids[i] - new_3))
 print("distances: ", distances)
 print(np.argmin(distances))
 printCentroid(centroids[np.argmin(distances)])
