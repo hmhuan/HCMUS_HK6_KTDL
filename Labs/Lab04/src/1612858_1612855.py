@@ -2,7 +2,6 @@ import sys
 import csv
 import numpy as np
 import math
-from scipy.spatial.distance import cdist
 
 # Đọc dữ liệu từ file input *.csv 
 def read_input_file(fileIn_name):
@@ -50,10 +49,15 @@ def kMean(data, k):
     #         [0,0,0,1,1,0,1,1],
     #         [0,0,0,1,1,0,0,0],
     #         [1,0,1,0,0,0,1,1]]
+	
 	centroids = []
 	for id in initial_id:
-		centroids.append(data[id])	
-
+		centroids.append(data[id])
+		
+	print("Initial starting points (random):\n")
+	for i in range(len(centroids)):
+		print("Cluster%d: " %i, centroids[i])
+	print("\nProcessing...")
 	# Khởi tạo các cluster ban đầu là rỗng
 	clusters = [[] for x in range(k)]
 	# Khởi tạo các idCluster ban đầu của các điểm dữ liệu là 0
@@ -102,13 +106,13 @@ def kMean(data, k):
 		nCluster.append(len(cluster))
 
 	# Khởi tạo giá trị Sum of Squared Error
-	# print("Calculating SSE value.")
+	print("Calculating SSE value...")
 	SSE = 0 
 	idData = 0
 	for dataPoint in data:
 		SSE += distanceMeasure(dataPoint, centroids[idCluster[idData]])
 		idData += 1
-	print("SSE value =", SSE)
+	print("Result:\nIterations = %s\nSSE value = %s" %(iterations, SSE))
 	return centroids, idCluster, nCluster, SSE
 
 # Hàm ghi ra file output assignment.csv
